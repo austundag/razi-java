@@ -36,6 +36,10 @@ public class LanguageDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+
 	public void create(String code, String name, String nativeName) {
 		String SQL = "insert into language (code, name, native_name) values (?, ?, ?)";
 		jdbcTemplate.update(SQL, code, name, nativeName);
